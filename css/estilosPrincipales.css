@@ -1,5 +1,5 @@
 body.fondoclinica {
-    background-image: url('./imgs/fondo.jpg');
+    background-image: url('../imgs/fondo.jpg');
     background-size: cover;
     background-position: center;
 }
