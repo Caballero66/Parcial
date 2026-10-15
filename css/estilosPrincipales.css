@@ -36,14 +36,12 @@ h1, h2, h3, h4, h5, h6, label, p, .form-label, th, td {
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.brand-icono {
-    animation: latidoRapido 3s infinite ease-in-out;
-    color: #06b6d4;
-}
-
-@keyframes latidoRapido {
-    0%, 100% { transform: scale(1); filter: drop-shadow(0 0 2px rgba(6, 182, 212, 0.5)); }
-    50% { transform: scale(1.15); filter: drop-shadow(0 0 10px rgba(6, 182, 212, 0.8)); }
+.text-cyan-gradient {
+    background: linear-gradient(135deg, #22d3ee 0%, #3b82f6 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.5px;
 }
 
 .vista-seccion {
