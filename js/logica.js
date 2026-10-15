@@ -325,27 +325,22 @@ function sonSintomasValidos(sintomas) {
     return Array.isArray(sintomas) && sintomas.length > 0;
 }
 
-function validarDatosPaciente(paciente) {
-    const errores = [];
+function esPresionValida(sistolica, diastolica) {
+    return Number.isInteger(sistolica) && 
+           Number.isInteger(diastolica) && 
+           sistolica >= 50 && sistolica <= 250 && 
+           diastolica >= 30 && diastolica <= 150 && 
+           sistolica > diastolica;
+}
 
-    if (!esNombreValido(paciente.nombre)) {
-        errores.push("Nombre inválido");
-    }
-    if (!esEdadValida(paciente.edad)) {
-        errores.push("Edad invalida");
-    }
-    if (!esTemperaturaValida(paciente.temperatura)) {
-        errores.push("Temperatura fuera de rango natural");
-    }
-    if (!esFrecuenciaCardiacaValida(paciente.frecuenciaCardiaca)) {
-        errores.push("Frecuencia cardíaca fuera de rango natural");
-    }
-    if (!sonSintomasValidos(paciente.sintomas)) {
-        errores.push("Debe seleccionar al menos un síntoma");
-    }
-
-    return {
-        esValido: errores.length === 0,
-        errores: errores
-    };
+function validarFasePersonales(paciente) {
+    const errores = {};
+    
+    if (!esNombreValido(paciente.nombre)) errores.nombre = "Ingrese un nombre válido";
+    if (!esEdadValida(paciente.edad)) errores.edad = "Edad fuera de rango humano (0-120)";
+    if (!esTemperaturaValida(paciente.temperatura)) errores.temperatura = "Rango admitido: 25°C - 45°C";
+    if (!esFrecuenciaCardiacaValida(paciente.frecuenciaCardiaca)) errores.frecuencia = "Frecuencia biológicamente irreal";
+    if (!esPresionValida(paciente.presionSistolica, paciente.presionDiastolica)) errores.presion = "Valores de presión imposibles";
+    
+    return errores;
 }

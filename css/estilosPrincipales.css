@@ -1,204 +1,214 @@
-body.fondoclinica {
-    background-image: url('../imgs/fondo.jpg');
-    background-size: cover;
-    background-position: center;
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+body {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+    color: #f8fafc;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    padding-bottom: 90px;
+    min-height: 100vh;
 }
 
-.barranav {
-    background: linear-gradient(135deg, #0d6efd 0%, #2bb3ff 50%, #1d4ed8 100%);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid rgb(2, 2, 3);
+h1, h2, h3, h4, h5, h6, label, p, .form-label, th, td {
+    color: #f8fafc !important;
 }
 
-.textonav {
-    color: white;;
-    font-size: 1.8rem;
-    letter-spacing: 1px;
-    text-shadow: 0 0 10px rgba(132, 230, 255, 0.5);
+.text-secondary {
+    color: #94a3b8 !important;
 }
 
-.secciones a {
-    color: white;
-    font-size: 1.2rem;
-    letter-spacing: 0.5px;
-    text-shadow: 0 0 8px rgba(132, 230, 255, 0.5);
+.table {
+    color: #f8fafc !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
 }
 
-
-h1 {
-    color: #0d6efd;
+.table-hover tbody tr:hover td {
+    background-color: rgba(6, 182, 212, 0.1) !important;
+    color: #22d3ee !important;
 }
 
-h2 {
-    margin-bottom: 20px;
-    color: #333333;
+.text-muted {
+    color: #64748b !important;
 }
 
-section {
-    background:
-        radial-gradient(ellipse at top right, rgba(39, 163, 246, 0.282), transparent 50%),
-        radial-gradient(ellipse at bottom left, rgba(39, 163, 246, 0.285), transparent 50%),
-         radial-gradient(ellipse at top left, rgba(39, 163, 246, 0.282), transparent 50%),
-        radial-gradient(ellipse at bottom right, rgba(39, 163, 246, 0.285), transparent 50%),
-        linear-gradient(145deg, rgba(255, 255, 255, 0.97), rgba(239, 248, 255, 0.96));
-    border: 1px solid rgba(255, 255, 255, 0.85);
-    border-radius: 22px;
-    padding: 24px;
-    box-shadow: 0 14px 36px rgba(24, 83, 132, 0.16);
-    backdrop-filter: blur(8px);
+.navbar {
+    background: rgba(15, 23, 42, 0.8) !important;
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-form {
-    max-width: 700px;
-    margin: 0 auto;
+.brand-icono {
+    animation: latidoRapido 3s infinite ease-in-out;
+    color: #06b6d4;
 }
 
-.campo-card {
-    background: linear-gradient(180deg, #f8fbff 0%, #eef5fb 100%);
-    border: 1.5px solid #dfeaf3;
-    border-radius: 18px;
-    padding: 1rem 1rem 1rem;
-    box-shadow: 0 8px 18px rgba(13, 110, 253, 0.08);
-    margin-bottom: 1.5rem;
+@keyframes latidoRapido {
+    0%, 100% { transform: scale(1); filter: drop-shadow(0 0 2px rgba(6, 182, 212, 0.5)); }
+    50% { transform: scale(1.15); filter: drop-shadow(0 0 10px rgba(6, 182, 212, 0.8)); }
 }
 
-.form-label {
-    display: block;
-    font-size: 1.5rem;
-    font-weight: 800;
-    letter-spacing: 0.08em;
-    color: #1f5fbf;
-    margin-bottom: 0.7rem;
-    padding-left: 0.35rem;
+.vista-seccion {
+    animation: entradaGlow 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-.campo-medico {
-    width: 100%;
-    border: 1.5px solid #dceaf7;
+@keyframes entradaGlow {
+    from { opacity: 0; transform: translateY(20px) scale(0.98); filter: blur(4px); }
+    to { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+}
+
+.card {
+    background: rgba(30, 41, 59, 0.45) !important;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 20px !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
+}
+
+.card-header {
+    background: linear-gradient(90deg, #00c6ff 0%, #0072ff 100%) !important;
+    border-radius: 19px 19px 0 0 !important;
+    border-bottom: none !important;
+    padding: 20px !important;
+}
+
+.form-control, .form-select {
+    background-color: rgba(15, 23, 42, 0.6) !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.1) !important;
+    color: #f8fafc !important;
+    border-radius: 10px !important;
+    padding: 11px 16px !important;
+    transition: all 0.25s ease-in-out !important;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #06b6d4 !important;
+    box-shadow: 0 0 15px rgba(6, 182, 212, 0.4) !important;
+    background-color: rgba(15, 23, 42, 0.8) !important;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%) !important;
+    border: none !important;
+    font-weight: 700 !important;
+    border-radius: 12px !important;
+    padding: 12px 24px !important;
+    box-shadow: 0 4px 15px rgba(6, 182, 212, 0.35) !important;
+    transition: all 0.2s ease-in-out !important;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(6, 182, 212, 0.5) !important;
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    color: #f8fafc !important;
+    border-radius: 12px !important;
+    padding: 12px 24px !important;
+    font-weight: 600 !important;
+    transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.15) !important;
+    color: #fff !important;
+}
+
+#contenedorSugerencias {
+    background: rgba(15, 23, 42, 0.95);
+    border: 1px solid rgba(6, 182, 212, 0.3);
     border-radius: 12px;
-    background: #ffffff;
-    color: #1f2d3d;
-    padding: 0.9rem 1rem;
-    font-size: 1.05rem;
-    box-shadow: inset 0 1px 3px rgba(17, 24, 39, 0.04);
-    transition: all 0.25s ease;
+    overflow: hidden;
 }
 
-.campo-medico::placeholder {
-    color: #7b8ca3; 
+.list-group-item-action {
+    background: transparent !important;
+    color: #e2e8f0 !important;
+    border: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+    transition: all 0.15s ease;
 }
 
-.campo-medico:focus {
-    border-color: #2b9df4;
-    box-shadow: 0 0 0 4px rgba(43, 157, 244, 0.12);
-    outline: none;
-    background: #ffffff;
+.list-group-item-action:hover {
+    background: rgba(6, 182, 212, 0.15) !important;
+    color: #22d3ee !important;
+    padding-left: 20px !important;
 }
 
-textarea.campo-medico {
-    min-height: 110px;
-    resize: vertical;
-}
-
-#lista .tabla-contenedor {
-    border: 1px solid rgba(31, 95, 191, 0.16);
+.tarjeta-sintoma {
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 16px;
-    background: #ffffff;
-    box-shadow: 0 10px 24px rgba(31, 95, 191, 0.12);
-}
-
-#lista .tabla-pacientes {
-    --bs-table-bg: #ffffff;
-    --bs-table-border-color: #e2edf7;
-    margin-bottom: 0;
-}
-
-#lista .tabla-pacientes thead th {
-    background: linear-gradient(100deg, #73b2f5, #2bb3ff, #6ca5e1);
-    color: #ffffff;
-    border-color: rgba(255, 255, 255, 0.2);
-    padding: 1rem 0.85rem;
-    font-size: 0.92rem;
-    letter-spacing: 0.03em;
-    white-space: nowrap;
-}
-
-#lista .tabla-pacientes tbody td {
-    padding: 0.9rem 0.85rem;
-    color: #26384b;
-}
-
-
-
-#lista .tabla-pacientes tbody tr:hover td {
-    background-color: #e6f3ff;
-}
-
-.acciones-formulario {
+    padding: 16px;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-top: 1.5rem;
+    align-items: center;
+    gap: 16px;
+    background: rgba(30, 41, 59, 0.4);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.acciones-formulario .btn {
-    min-width: 170px;
-    padding: 0.8rem 1.4rem;
-    border: 0;
-    border-radius: 14px;
-    color: #ffffff;
+.tarjeta-sintoma:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    border-color: rgba(6, 182, 212, 0.3);
+}
+
+.borde-leve { border-left: 4px solid #10b981 !important; }
+.borde-grave { border-left: 4px solid #f59e0b !important; }
+.borde-extremo { border-left: 4px solid #ef4444 !important; }
+
+.icono-sintoma {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.badge {
+    padding: 6px 12px !important;
+    border-radius: 8px !important;
+    font-weight: 700 !important;
+}
+
+.bg-success { background-color: rgba(16, 185, 129, 0.15) !important; color: #34d399 !important; border: 1px solid rgba(16, 185, 129, 0.3); }
+.bg-warning { background-color: rgba(245, 158, 11, 0.15) !important; color: #fbbf24 !important; border: 1px solid rgba(245, 158, 11, 0.3); }
+.bg-danger { background-color: rgba(239, 68, 68, 0.15) !important; color: #f87171 !important; border: 1px solid rgba(239, 68, 68, 0.3); }
+.bg-primary { background-color: rgba(59, 130, 246, 0.15) !important; color: #60a5fa !important; border: 1px solid rgba(59, 130, 246, 0.3); }
+
+footer {
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+.tabla-minimalista {
+    --bs-table-bg: transparent;
+    --bs-table-color: #f8fafc;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.tabla-minimalista thead th {
+    background: rgba(15, 23, 42, 0.6) !important;
+    color: #06b6d4 !important;
+    border-bottom: 2px solid rgba(6, 182, 212, 0.3) !important;
     font-weight: 700;
-    letter-spacing: 0.02em;
-    box-shadow: 0 7px 16px rgba(20, 78, 140, 0.2);
-    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    padding: 18px 20px !important;
+    border-top: none !important;
 }
 
-.botonregistro {
-    background: linear-gradient(135deg, #1685e8, #174fc5);
-}
-
-.botonlimpiar {
-    background: linear-gradient(135deg, #657b91, #40566d);
-}
-
-.acciones-formulario .btn:hover {
-    color: #ffffff;
-    filter: brightness(1.08);
-    transform: translateY(-3px);
-    box-shadow: 0 11px 22px rgba(20, 78, 140, 0.28);
-}
-
-.acciones-formulario .btn:active {
-    transform: translateY(-1px);
-}
-
-.acciones-formulario .btn:focus-visible {
-    outline: 3px solid rgba(43, 157, 244, 0.4);
-    outline-offset: 3px;
-}
-
-#pie {
-    background: linear-gradient(135deg, #0d6efd 0%, #2bb3ff 50%, #1d4ed8 100%);
-    color: #ffffff;
-    text-align: center;
-    padding: 1.25rem 1rem 1rem;
-    margin-top: 2rem;
-    box-shadow: 0 -6px 18px rgba(13, 110, 253, 0.25);
-    border-top: 3px solid rgba(255, 255, 255, 0.35);
-}
-
-#pie p {
-    margin: 0.35rem 0;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-}
-
-#pie #contenedorcreditos p {
-    font-size: 1.05rem;
-}
-
-#pie #contenedorinformacionacademica p {
-    font-size: 0.9rem;
-    opacity: 0.95;
+.tabla-minimalista tbody td {
+    background: rgb(16, 8, 85) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+    padding: 16px 20px !important;
+    color: #e2e8f0 !important;
 }
