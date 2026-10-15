@@ -337,9 +337,9 @@ function validarFasePersonales(paciente) {
     const errores = {};
     
     if (!esNombreValido(paciente.nombre)) errores.nombre = "Ingrese un nombre válido";
-    if (!esEdadValida(paciente.edad)) errores.edad = "Edad fuera de rango humano (0-120)";
+    if (!esEdadValida(paciente.edad)) errores.edad = "Edad fuera de rango";
     if (!esTemperaturaValida(paciente.temperatura)) errores.temperatura = "Rango admitido: 25°C - 45°C";
-    if (!esFrecuenciaCardiacaValida(paciente.frecuenciaCardiaca)) errores.frecuencia = "Frecuencia biológicamente irreal";
+    if (!esFrecuenciaCardiacaValida(paciente.frecuenciaCardiaca)) errores.frecuencia = "Frecuencia irreal";
     if (!esPresionValida(paciente.presionSistolica, paciente.presionDiastolica)) errores.presion = "Valores de presión imposibles";
     
     return errores;
